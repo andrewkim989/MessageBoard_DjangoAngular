@@ -1,0 +1,41 @@
+<div id = "chat">
+  <div id = "newcomment">
+    <h4>Post a Comment</h4>
+
+    <form (submit) = "postComment()" #commentData = "ngForm">
+      Name: <input type = "text" name = "name" [(ngModel)] = "newcomment.name" size = "35"
+      #name = "ngModel" ngModel><br/>
+
+      Post: <textarea name = "post" [(ngModel)] = "newcomment.post" rows = "4" cols = "40"
+      #post = "ngModel" ngModel required></textarea><br/>
+
+      <input type = "submit" class = "btn btn-primary" value = "Post"
+        [disabled] = "commentData.form.invalid">
+    </form>
+  </div>
+  
+  <div id = "threadline"></div>
+  <div id = "topic" *ngIf = "thread">
+    <span><b>{{thread.subject}}</b> <span class = "name">{{thread.name}}</span>
+      {{thread.created_at | date: "medium"}} <i class = "num">No. {{thread.id}}</i></span>
+    <p>{{thread.post}}</p>
+  </div>
+  <div class = "comments" *ngFor = "let c of comments">
+    <span><span class = "name">{{c.name}}</span> {{c.created_at | date: "medium"}} 
+      <i class = "num">No. {{c.id}}</i></span>
+    <p class = "singlecomment">{{c.post}}</p>
+  </div>
+
+  <div id = "loading" *ngIf = "!thread">
+    <h1>Loading...</h1>
+  </div>
+  <div id = "threadline"></div>
+  <div id = "bottom">
+    [ <a routerLink = "/">Home</a> ] <br/>
+    <div id = "bottomtext">
+      <span>Ponychat is based on Ponychan and other -chan related websites</span><br/>
+      <span>All trademarks, copyrights, comments, and images on this page are owned by and are the 
+        responsibility of their respective parties.</span>
+    </div>
+  </div>
+</div>

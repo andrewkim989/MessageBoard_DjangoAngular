@@ -1,0 +1,57 @@
+#newcomment {
+    width: 400px;
+    margin: auto;
+    padding-bottom: 25px;
+}
+#newcomment h4 {
+    text-align: center;
+}
+input {
+    margin: 5px;
+}
+textarea {
+    vertical-align: top;
+    resize: both;
+}
+#threadline {
+    height: 1px;
+    background-color: grey;
+}
+#topic {
+    margin: 5px;
+    margin-left: 15px;
+    white-space: pre-line;
+}
+.comments {
+    margin: 10px;
+    margin-left: 40px;
+    background-color: lightgreen;
+    border: 1px solid blue;
+    border-radius: 5px;
+    padding: 5px;
+    width: 1000px;
+}
+.name {
+    margin-left: 5px;
+    color: blue;
+}
+.singlecomment {
+    margin-left: 5px;
+    white-space: pre-line;
+}
+.num {
+    margin-left: 15px;
+}
+#loading {
+    text-align: center;
+    height: 290px;
+}
+#bottom {
+    margin: 30px;
+}
+#bottomtext {
+    margin: auto;
+    width: 1000px;
+    text-align: center;
+    vertical-align: top;
+}

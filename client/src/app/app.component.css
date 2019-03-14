@@ -1,0 +1,15 @@
+#top {
+    text-align: center;
+    padding: 10px;
+    background-color: rgb(102, 102, 255);
+}
+#blackline {
+    height: 2px;
+    background-color: black;
+}
+#main {
+    background-color: lightblue;
+    padding: 10px;
+    min-height: 580px;
+    padding-bottom: 5px;
+}

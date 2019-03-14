@@ -1,0 +1,71 @@
+#threadmain {
+    min-height: 600px;
+}
+#newthread {
+    width: 400px;
+    margin: auto;
+    padding-bottom: 25px;
+}
+#newthread h4 {
+    text-align: center;
+}
+input {
+    margin: 5px;
+}
+textarea {
+    vertical-align: top;
+    resize: both;
+}
+.error {
+    color: rgb(199, 46, 46);
+}
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+.threadline {
+    height: 1px;
+    background-color: grey;
+}
+.singletopic {
+    margin: 5px;
+    margin-left: 15px;
+    white-space: pre-line;
+}
+.name {
+    margin-left: 5px;
+    color: blue;
+}
+.num {
+    margin-left: 15px;
+}
+.comments {
+    margin: 10px;
+    margin-left: 40px;
+    background-color: lightgreen;
+    border: 1px solid blue;
+    border-radius: 5px;
+    padding: 5px;
+    width: 1000px;
+}
+.singlecomment {
+    margin-left: 5px;
+    white-space: pre-line;
+}
+a {
+    margin-left: 15px;
+}
+.altlink {
+    margin-left: 0px;
+}
+#loading {
+    text-align: center;
+    height: 250px;
+}
+#bottomtext {
+    margin: auto;
+    width: 1000px;
+    text-align: center;
+    padding: 10px;
+}

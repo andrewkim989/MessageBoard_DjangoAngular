@@ -1,0 +1,57 @@
+<div id = "threadmain">
+  <div id = "newthread">
+    <h4>Create a new thread</h4>
+
+    <ul class = "error" *ngIf = "error">
+      <li *ngFor = "let e of data.error">
+        {{e}}
+      </li>
+    </ul><br/>
+
+    <form (submit) = "createThread()" #threadData = "ngForm">
+      Name: <input type = "text" name = "name" [(ngModel)] = "newthread.name" size = "35"
+      #name = "ngModel" ngModel><br/>
+
+      Subject: <input type = "text" name = "subject" [(ngModel)] = "newthread.subject" size = "35"
+      #subject = "ngModel" ngModel required><br/>
+
+      Post: <textarea name = "post" [(ngModel)] = "newthread.post" rows = "4" cols = "40"
+      #post = "ngModel" ngModel required></textarea><br/>
+
+      <!--Image: <input type = "file" name = "image" [(ngModel)] = "newthread.image" 
+      #image = "ngModel" ngModel (change) = "onSelectFile($event)"><br/><br/>-->
+
+      <input type = "submit" class = "btn btn-success" value = "Start a new thread"
+        [disabled] = "threadData.form.invalid">
+    </form>
+  </div>
+
+  <div class = "singlethread" *ngFor = "let t of threads">
+    <div class = "threadline"></div>
+    <div class = "singletopic">
+      <span><b>{{t.subject}}</b> <span class = "name">{{t.name}}</span>
+        {{t.created_at | date: "medium"}} <i class = "num">No. {{t.id}}</i></span>
+        <a [routerLink] = "['/topic', t.id]">[View]</a>
+      <p>{{t.post}}</p>
+      <span *ngIf = "t.count > 0">{{t.count}} posts omitted. Click 
+        <a class = "altlink" [routerLink] = "['/topic', t.id]">View</a> to see all.</span>
+    </div>
+
+    <div class = "comments" *ngFor = "let c of t.comments">
+      <span><span class = "name">{{c.name}}</span> {{c.created_at | date: "medium"}} 
+        <i class = "num">No. {{c.id}}</i></span>
+      <p class = "singlecomment">{{c.post}}</p>
+    </div>
+  </div>
+
+  <div id = "loading" *ngIf = "!threads">
+    <h1>Loading...</h1>
+  </div>
+  <div class = "threadline"></div>
+
+  <div id = "bottomtext">
+    <span>Ponychat is based on Ponychan and other -chan related websites</span><br/>
+    <span>All trademarks, copyrights, comments, and images on this page are owned by and are the 
+      responsibility of their respective parties.</span>
+  </div>
+</div>
